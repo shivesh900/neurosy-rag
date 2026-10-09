@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NeuroSy-RAG · Neuro-symbolic symptom checker (demo)</title>
+  <meta name="description" content="Hybrid neuro-symbolic healthcare assistant: NLP symptom extraction, RF+DT ensemble, knowledge-graph rule validation, RAG explanations and OpenStreetMap care ranking, running in your browser." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="logo">N</span><div><h1>NeuroSy-RAG</h1><p>Hybrid neuro-symbolic symptom checker</p></div></div>
+    <a class="gh" href="https://github.com/shivesh900/neurosy-rag" target="_blank" rel="noreferrer">GitHub ↗</a>
+  </header>
+  <main>
+    <div class="disclaimer">⚠️ <span id="disclaimer"></span></div>
+    <section class="card">
+      <label for="text">Describe your symptoms in plain English</label>
+      <textarea id="text" rows="3" placeholder="e.g. fever with chills and sweating for 2 days, headache, no cough"></textarea>
+      <div class="examples" id="examples"></div>
+      <div class="row">
+        <button id="go" class="primary" disabled>Loading model…</button>
+        <span class="muted small" id="status"></span>
+      </div>
+    </section>
+    <div id="results" hidden>
+      <section class="grid2">
+        <div class="card">
+          <h2><span class="step">1</span> Symptoms understood <small>NLP</small></h2>
+          <div id="symptoms" class="chips"></div>
+          <div id="negated" class="chips"></div>
+          <div id="notes" class="muted small"></div>
+        </div>
+        <div class="card triage" id="triage"></div>
+      </section>
+      <section class="card">
+        <h2><span class="step">2</span> Diagnosis <small>RF + DT ensemble → knowledge-graph rules</small></h2>
+        <div id="preds"></div>
+        <details id="trace" open><summary>Why? (rule trace)</summary><ul id="reasons"></ul></details>
+        <details id="rejected"><summary></summary><ul id="rejectedList"></ul></details>
+      </section>
+      <section class="card" id="ragCard">
+        <h2><span class="step">3</span> What it is &amp; what to do <small>RAG over the knowledge base</small></h2>
+        <div id="answer"></div>
+        <details><summary>Retrieved sources</summary><ol id="sources"></ol></details>
+      </section>
+      <section class="card" id="careCard">
+        <h2><span class="step">4</span> Nearby care <small>OpenStreetMap, weighted ranking</small></h2>
+        <div class="row wrap">
+          <input id="place" placeholder="City or area, e.g. Tambaram, Chennai" />
+          <button id="careBtn">Search</button>
+          <button id="geoBtn" title="Use my location">📍 Near me</button>
+          <button id="sampleBtn" class="ghost">Sample (SRM KTR)</button>
+        </div>
+        <p class="muted small" id="careStatus"></p>
+        <div id="map"></div>
+        <ol id="providers"></ol>
+      </section>
+      <p class="muted small center" id="latency"></p>
+    </div>
+    <section class="card about">
+      <h2>How it works</h2>
+      <ol>
+        <li><b>NLP entity extraction</b>: synonyms, typo-tolerant fuzzy matching, negation scope ("no fever"), duration rules.</li>
+        <li><b>Neural layer</b>: a Random Forest + Decision Tree soft-voting ensemble scores <span id="nDis">34</span> conditions.</li>
+        <li><b>Symbolic layer</b>: a disease–symptom knowledge graph and clinical rules validate, re-rank or reject each prediction. If nothing is supported, it abstains instead of guessing.</li>
+        <li><b>RAG</b>: TF-IDF retrieval over a curated knowledge base produces a cited explanation.</li>
+        <li><b>Geospatial</b>: hospitals and clinics from OpenStreetMap, ranked by distance, specialty match, emergency readiness and data quality.</li>
+      </ol>
+      <p class="muted small">This page runs a JavaScript port of the Python package, using the same exported model. CI checks that both give identical answers. Nothing you type leaves your browser, except the place you search for, which goes to OpenStreetMap. <a href="https://github.com/shivesh900/neurosy-rag#results-measured-python-scriptsevaluatepy">Measured results →</a></p>
+    </section>
+  </main>
+  <footer>Built by <a href="https://github.com/shivesh900">Shivesh Haran P</a> · MIT · Map data © OpenStreetMap contributors</footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
