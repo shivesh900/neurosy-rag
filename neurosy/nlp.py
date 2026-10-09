@@ -74,7 +74,7 @@ def _normalise(text: str) -> str:
     text = re.sub(r"[^a-z0-9'\s.,;!?/-]", " ", text)
     text = re.sub(r"[ \t]+", " ", text)
     text = INVERSION.sub(lambda m: f"{m.group(0)}, {m.group(2)} {m.group(1)}", text)
-    return DETERMINERS.sub(" ", text)
+    return re.sub(r" {2,}", " ", DETERMINERS.sub(" ", text))
 
 
 class SymptomExtractor:
@@ -84,8 +84,9 @@ class SymptomExtractor:
         phrases: List[Tuple[str, str]] = []
         for key, info in self.kb.symptoms.items():
             for syn in set(info["synonyms"] + [info["label"]]):
-                phrases.append((DETERMINERS.sub(" ", " " + syn.lower()).strip(), key))
-        phrases.sort(key=lambda p: len(p[0]), reverse=True)
+                phrases.append((re.sub(r" {2,}", " ", DETERMINERS.sub(" ", " " + syn.lower())).strip(), key))
+        # longest first; ties broken alphabetically so the order is deterministic (and matches the JS port)
+        phrases = sorted(set(phrases), key=lambda p: (-len(p[0]), p[0], p[1]))
         self.phrases = phrases
         self.patterns = [(re.compile(rf"(?<![a-z0-9]){re.escape(p)}(?![a-z0-9])"), p, k) for p, k in phrases]
         self.fuzzy_vocab = {p: k for p, k in phrases if len(p) >= 6 and not p.isdigit()}
