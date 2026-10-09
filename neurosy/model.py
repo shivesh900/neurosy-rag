@@ -19,7 +19,9 @@ MODEL_PATH = MODEL_DIR / "ensemble.joblib"
 
 
 def build_ensemble(seed: int = 42) -> VotingClassifier:
-    rf = RandomForestClassifier(n_estimators=300, min_samples_leaf=1, class_weight="balanced",
+    # 100 trees with min_samples_leaf=3: ~1.5 points less held-out accuracy than 300 fully grown trees,
+    # but 16x smaller (it ships to the browser demo) and smoother probabilities for the fusion step.
+    rf = RandomForestClassifier(n_estimators=100, min_samples_leaf=3, class_weight="balanced",
                                 random_state=seed, n_jobs=-1)
     dt = DecisionTreeClassifier(max_depth=18, min_samples_leaf=2, class_weight="balanced", random_state=seed)
     return VotingClassifier([("rf", rf), ("dt", dt)], voting="soft", weights=[3, 1])
