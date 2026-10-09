@@ -92,13 +92,14 @@ def run_vignettes(eng, filename, title):
         ok3 += v["expected"] in keys
         abst += r["abstained"]
         if not hit1:
-            misses.append((v["expected"], keys[:1] or ["abstained"], v["text"]))
+            got = f"abstained (best guess {keys[0]})" if r["abstained"] and keys else (keys[0] if keys else "abstained")
+            misses.append((v["expected"], got, v["text"]))
     dt = (time.perf_counter() - t0) / len(vig) * 1000
     print(f"\n{title}, n={len(vig)}")
     print(f"   top-1 {ok1}/{len(vig)} = {ok1 / len(vig):.1%}   top-3 {ok3}/{len(vig)} = {ok3 / len(vig):.1%}   "
           f"abstained {abst}   mean latency {dt:.0f} ms (CPU)")
     for exp, got, text in misses:
-        print(f"   miss: expected {exp}, got {got[0]}: \"{text[:70]}\"")
+        print(f"   miss: expected {exp}, got {got}: \"{text[:70]}\"")
 
 
 if __name__ == "__main__":

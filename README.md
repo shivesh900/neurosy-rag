@@ -1,5 +1,9 @@
 # NeuroSy-RAG: Hybrid Neuro-Symbolic Healthcare Assistant
 
+### 🚀 Live demo: **https://shivesh900.github.io/neurosy-rag/**
+
+Type symptoms (or tap an example) and you get the whole pipeline: extracted symptoms, triage, ranked diagnoses with the rule trace, a cited explanation, and ranked hospitals on a map (search any place, or use your location). It runs entirely in your browser.
+
 > **Educational project, not a medical device.** It can be wrong and does not replace a doctor. In an emergency call **108** (India) or your local emergency number.
 
 NeuroSy-RAG turns a plain-English symptom description into **explainable** condition suggestions:
@@ -10,9 +14,11 @@ NeuroSy-RAG turns a plain-English symptom description into **explainable** condi
 4. **RAG:** retrieves the matching sections of a curated medical knowledge base and writes a cited explanation (what it is, what helps, when to see a doctor). It works with **no API key**; an LLM is optional and is grounding-checked.
 5. **Geospatial care finder:** finds nearby hospitals and clinics with the free OpenStreetMap APIs and ranks them by a **weighted score** (distance, specialty match, emergency readiness for the risk level, facility type, data quality).
 
-There's a **Streamlit demo**, a **CLI** and a **FastAPI** service, and everything runs locally on CPU in about 30 ms per query.
+There's a **Streamlit demo**, a **CLI**, a **FastAPI** service and an in-browser live demo. Everything runs on CPU in about 15 ms per query.
 
-![Streamlit demo](docs/streamlit-demo.png)
+| Live web demo | Streamlit app |
+|---|---|
+| ![Live demo](docs/live-demo.jpg) | ![Streamlit demo](docs/streamlit-demo.png) |
 
 ## Architecture
 
@@ -24,7 +30,7 @@ flowchart TD
     end
     NLP -->|symptom vector| ML
     subgraph ML["2 · Neural / statistical"]
-        RF[Random Forest 300 trees] --> V((soft vote 3:1))
+        RF[Random Forest 100 trees] --> V((soft vote 3:1))
         DT[Decision Tree] --> V
     end
     KB[(Knowledge base<br/>34 conditions · 79 symptoms<br/>weights · required findings · red flags)]
@@ -59,7 +65,7 @@ flowchart TD
 
 Final score = `0.55 × ML probability + 0.45 × KG score` (× contradiction penalty) for every candidate that survives the rules. Each prediction comes with a human-readable rule trace.
 
-Example. The ML model alone prefers COVID-19, but the symbolic layer ranks malaria first because the knowledge graph explains all four symptoms:
+Example. The ML model alone prefers typhoid, but the symbolic layer ranks malaria first because the knowledge graph explains all four symptoms (fever, chills, sweating, headache) and covers more of malaria's profile:
 
 ```
 $ python -m neurosy.cli "fever with shivering chills every evening then heavy sweating, headache, no cough"
@@ -68,11 +74,11 @@ Denied: cough
 
 Condition                           Final     ML     KG  Status
 Malaria                              0.42   0.18   0.72  validated
-COVID-19                             0.29   0.24   0.35  validated
-Typhoid fever                        0.25   0.12   0.40  validated
+Typhoid fever                        0.29   0.19   0.40  validated
+Hypoglycaemia (low blood sugar)      0.22   0.12   0.34  adjusted
 
 Why (neuro-symbolic checks on the top suggestion):
-  - Ranked first after symbolic validation (the ML model alone preferred COVID-19).
+  - Ranked first after symbolic validation (the ML model alone preferred Typhoid fever).
   - R3 knowledge graph supports it: 4 typical symptoms matched (coverage 53%, explains 100% of
   your symptoms).
 
@@ -101,7 +107,7 @@ cd neurosy-rag
 python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements-dev.txt
 
-python scripts/train.py                                 # ~5 s: generates data, trains, saves models/ensemble.joblib
+python scripts/train.py                                 # ~3 s: generates data, trains, saves models/ensemble.joblib
 streamlit run app.py                                    # demo UI at http://localhost:8501
 python -m neurosy.cli "burning when I pee and peeing often, no fever"
 python -m neurosy.cli "high fever and joint pain" --place "Tambaram, Chennai"   # live OpenStreetMap search
@@ -126,6 +132,14 @@ Returns the extracted symptoms, predictions (ML probability, KG score, final sco
 | Dense retrieval | `pip install -r requirements-optional.txt` and `NEUROSY_EMBEDDINGS=1` (all-MiniLM-L6-v2 + FAISS) |
 | LLM-written explanation | `NEUROSY_LLM_API_KEY=...` (any OpenAI-compatible endpoint; `NEUROSY_LLM_BASE_URL`, `NEUROSY_LLM_MODEL`). The answer is only used if every sentence passes the grounding check against the retrieved sources; otherwise the extractive answer is kept. |
 
+## How the live demo works
+
+GitHub Pages only serves static files, so `web/` contains a **JavaScript port of the pipeline** (`web/engine.js`): the same NLP rules (including a port of Python's `difflib` for typo matching), the same rules and fusion, TF-IDF retrieval and provider ranking. The trained scikit-learn ensemble is exported **tree by tree** to JSON (`scripts/export_web.py`, about 0.3 MB gzipped), so the browser computes exactly the same `predict_proba`.
+
+`scripts/check_web_parity.py` runs all 51 vignettes plus edge cases through both engines. It requires identical symptoms, diagnoses, rule status, triage and explanation, with scores equal to within 0.001. It currently passes on 59/59. CI runs it, and the Pages workflow refuses to deploy if it fails.
+
+The hospital search calls the free public OpenStreetMap servers (Nominatim for the place, Overpass for hospitals and clinics) straight from your browser. Those servers are shared and sometimes overloaded. When they don't answer, the demo says so and ranks a bundled OpenStreetMap snapshot around SRM Kattankulathur instead, so the ranking step always works.
+
 ## Data
 
 - **Knowledge base** (`data/knowledge_base.json`): 34 common conditions (with an Indian context: dengue, malaria, typhoid, chikungunya, TB and others) and 79 symptoms with synonyms. Each condition has ICD-10 code, specialty, risk level, weighted symptoms, required findings, red flags, description, precautions and when to see a doctor. It was written for this project from general public-health information. It is a teaching resource, not clinical guidance.
@@ -135,34 +149,34 @@ Returns the extracted symptoms, predictions (ML probability, KG score, final sco
 ## Results (measured: `python scripts/evaluate.py`)
 
 ```
-1) Held-out synthetic split: ML ensemble accuracy 0.929 (34 diseases, 5100 synthetic patients, 80/20 stratified)
+1) Held-out synthetic split: ML ensemble accuracy 0.914 (34 diseases, 5100 synthetic patients, 80/20 stratified)
 
 2) Hard synthetic patients (2-3 reported symptoms + 50% noise), n=1360
-   ML only        : top-1 0.835   top-3 0.988
-   Neuro-symbolic : top-1 0.859   top-3 0.998   abstained 0.5%   accuracy when it answers 0.863
+   ML only        : top-1 0.804   top-3 0.988
+   Neuro-symbolic : top-1 0.849   top-3 0.998   abstained 1.3%   accuracy when it answers 0.860
 
 3) Out-of-distribution (3 random unrelated symptoms), n=300
-   ML alone still names a disease with mean top probability 0.43
-   Neuro-symbolic abstains on 34.0% of them
+   ML alone still names a disease with mean top probability 0.37
+   Neuro-symbolic abstains on 39.7% of them
 
 4) Free-text vignettes end to end (NLP, ML, rules; used during development), n=34
-   top-1 33/34 = 97.1%   top-3 34/34 = 100.0%   abstained 0   mean latency 26 ms (CPU)
+   top-1 33/34 = 97.1%   top-3 34/34 = 100.0%   abstained 0   mean latency 13 ms (CPU)
    miss: expected influenza, got covid19: "high temperature, body aches all over, dry cough and totally exhausted"
 
 5) Held-out free-text vignettes (written before tuning, never used to tune), n=17
-   top-1 13/17 = 76.5%   top-3 15/17 = 88.2%   abstained 2   mean latency 26 ms (CPU)
-   miss: expected dengue, got covid19: "for two days I have had fever with severe body pain, my eyes hurt when"
+   top-1 13/17 = 76.5%   top-3 14/17 = 82.4%   abstained 3   mean latency 18 ms (CPU)
+   miss: expected dengue, got abstained (best guess covid19): "for two days I have had fever with severe body pain, my eyes hurt when"
    miss: expected tuberculosis, got bronchitis: "coughing for more than a month, sometimes blood in the sputum, lost ap"
-   miss: expected gastroenteritis, got gastroenteritis: "my child has watery diarrhea and vomited three times today"
+   miss: expected gastroenteritis, got abstained (best guess gastroenteritis): "my child has watery diarrhea and vomited three times today"
    miss: expected uti, got abstained: "it burns when I urinate and there is blood in my urine"
 ```
 
 How to read these numbers honestly:
 
 - **They measure consistency with the knowledge base, not clinical accuracy.** The test patients come from the same generator as the training data. Real clinical validation would need real, consented patient records.
-- On **incomplete, noisy inputs**, the symbolic layer **improves top-1 accuracy** (0.835 → 0.859) and top-3 accuracy (0.988 → 0.998) over the ML ensemble alone.
-- On **nonsense inputs** (3 random unrelated symptoms), the ML model still names a disease with ~43% confidence. The rule layer **abstains on about a third of them**. That is the hallucination-mitigation effect, measured.
-- The **free-text vignettes** test the whole pipeline. The 34 development vignettes were used to grow the synonym list, so 97% there is optimistic. The **17 held-out vignettes**, written before tuning, give the more honest number: **76.5% top-1, 88% top-3**. The misses are instructive: "eyes hurt" isn't mapped to *pain behind eyes*, "it burns when I urinate" isn't recognised, and a month-long cough with blood was ranked bronchitis before TB.
+- On **incomplete, noisy inputs**, the symbolic layer **improves top-1 accuracy from 80.4% to 84.9%** (top-3: 98.8% → 99.8%) over the ML ensemble alone.
+- On **nonsense inputs** (3 random unrelated symptoms), the ML model still names a disease. The rule layer **abstains on about 40% of them**. That is the hallucination-mitigation effect, measured.
+- The **free-text vignettes** test the whole pipeline. The 34 development vignettes were used to grow the synonym list, so 97% there is optimistic. The **17 held-out vignettes**, written before tuning, give the more honest number: **76.5% top-1, 82% top-3**. The misses are instructive: "eyes hurt" isn't mapped to *pain behind eyes*, "it burns when I urinate" isn't recognised, and a month-long cough with blood was ranked bronchitis before TB.
 
 ## Project structure
 
@@ -178,7 +192,8 @@ neurosy/
   pipeline.py    end-to-end orchestration
   cli.py, api.py command line + FastAPI
 app.py           Streamlit demo
-scripts/         train.py, evaluate.py
+web/             live demo: index.html, app.js, engine.js (JS port), model exported by CI
+scripts/         train.py, evaluate.py, export_web.py, check_web_parity.py
 data/            knowledge base, vignettes, OSM snapshot
 tests/           pytest suite (NLP, rules, RAG grounding, geo ranking, API)
 ```
@@ -189,7 +204,7 @@ tests/           pytest suite (NLP, rules, RAG grounding, geo ranking, API)
 pytest -q
 ```
 
-GitHub Actions runs the tests on Python 3.10 and 3.12 and the full evaluation on every push.
+GitHub Actions runs the tests on Python 3.10 and 3.12, the full evaluation and the Python↔browser parity check on every push. A second workflow trains the model, exports it and deploys the live demo to GitHub Pages.
 
 ## Limitations and future work
 
