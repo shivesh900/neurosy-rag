@@ -1,0 +1,888 @@
+{
+ "center": [
+  12.8231,
+  80.0442
+ ],
+ "label": "SRM Institute of Science and Technology, Kattankulathur (sample origin)",
+ "source": "OpenStreetMap via the Overpass API, fetched 2026-10-09",
+ "license": "ODbL 1.0, (c) OpenStreetMap contributors",
+ "elements": [
+  {
+   "type": "node",
+   "id": 6926113511,
+   "tags": {
+    "amenity": "hospital",
+    "name": "Sayee Hospitals"
+   },
+   "lat": 12.8881721,
+   "lon": 80.0259362
+  },
+  {
+   "type": "node",
+   "id": 6933010476,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "J.S. Hospital"
+   },
+   "lat": 12.7995425,
+   "lon": 80.0237341
+  },
+  {
+   "type": "node",
+   "id": 6934737010,
+   "tags": {
+    "amenity": "hospital",
+    "name": "Srm Medical College Hospital And Research Centre"
+   },
+   "lat": 12.8210402,
+   "lon": 80.0479585
+  },
+  {
+   "type": "node",
+   "id": 7257289034,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Christhudass Hospital"
+   },
+   "lat": 12.8515647,
+   "lon": 80.0666869
+  },
+  {
+   "type": "node",
+   "id": 7257289035,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Vanavil Medical Centre"
+   },
+   "lat": 12.7988384,
+   "lon": 80.0239066
+  },
+  {
+   "type": "node",
+   "id": 7257289045,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "K.R. Hospital"
+   },
+   "lat": 12.842395,
+   "lon": 80.0576052
+  },
+  {
+   "type": "node",
+   "id": 7820652147,
+   "tags": {
+    "amenity": "hospital",
+    "name": "ESI Hospital"
+   },
+   "lat": 12.8875617,
+   "lon": 80.0237609
+  },
+  {
+   "type": "node",
+   "id": 7820652164,
+   "tags": {
+    "amenity": "hospital",
+    "name": "Robust Health Care Centre"
+   },
+   "lat": 12.8870998,
+   "lon": 80.0250194
+  },
+  {
+   "type": "node",
+   "id": 7820652169,
+   "tags": {
+    "amenity": "hospital",
+    "name": "Saravana Hospital"
+   },
+   "lat": 12.8870832,
+   "lon": 80.0243038
+  },
+  {
+   "type": "node",
+   "id": 7820652171,
+   "tags": {
+    "amenity": "clinic",
+    "name": "Muthaiah Clinic"
+   },
+   "lat": 12.8865923,
+   "lon": 80.0211679
+  },
+  {
+   "type": "node",
+   "id": 7820652179,
+   "tags": {
+    "amenity": "clinic",
+    "name": "Baba Physiotherapy Clinic"
+   },
+   "lat": 12.8854535,
+   "lon": 80.0222819
+  },
+  {
+   "type": "node",
+   "id": 7820652188,
+   "tags": {
+    "amenity": "clinic",
+    "name": "Sri Sastha Clinic"
+   },
+   "lat": 12.887959,
+   "lon": 80.0198129
+  },
+  {
+   "type": "node",
+   "id": 7820652193,
+   "tags": {
+    "amenity": "hospital",
+    "name": "Saradha Hospital"
+   },
+   "lat": 12.8875885,
+   "lon": 80.0243868
+  },
+  {
+   "type": "node",
+   "id": 7820802357,
+   "tags": {
+    "amenity": "clinic",
+    "name": "Vijay Ortho Clinic"
+   },
+   "lat": 12.7872962,
+   "lon": 80.0367537
+  },
+  {
+   "type": "node",
+   "id": 7820802367,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Sulaiman Memorial Dental and Child Care"
+   },
+   "lat": 12.7638952,
+   "lon": 80.0039609
+  },
+  {
+   "type": "node",
+   "id": 7820802368,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Acu Touch and Varma Clinic"
+   },
+   "lat": 12.7993493,
+   "lon": 80.0235318
+  },
+  {
+   "type": "node",
+   "id": 7820802380,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Sri Child Care Clinic and Vaccination Centre"
+   },
+   "lat": 12.7939241,
+   "lon": 80.02557
+  },
+  {
+   "type": "node",
+   "id": 7820802386,
+   "tags": {
+    "amenity": "doctors",
+    "healthcare": "doctor",
+    "name": "Dr. Karthikeyan"
+   },
+   "lat": 12.7957691,
+   "lon": 80.027597
+  },
+  {
+   "type": "node",
+   "id": 7820802393,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "S S Clinic"
+   },
+   "lat": 12.7970996,
+   "lon": 80.0292055
+  },
+  {
+   "type": "node",
+   "id": 7820802394,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Nirahhs Health Centre"
+   },
+   "lat": 12.7990975,
+   "lon": 80.0241996
+  },
+  {
+   "type": "node",
+   "id": 7820802398,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "otolaryngology;diabetology",
+    "name": "Naveen Hospital"
+   },
+   "lat": 12.7935765,
+   "lon": 80.0270741
+  },
+  {
+   "type": "node",
+   "id": 7820802405,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Devaki Memorial Eye Clinic"
+   },
+   "lat": 12.796262,
+   "lon": 80.026283
+  },
+  {
+   "type": "node",
+   "id": 7820802408,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Akshaya Sida Hospital"
+   },
+   "lat": 12.7962013,
+   "lon": 80.022447
+  },
+  {
+   "type": "node",
+   "id": 7820802420,
+   "tags": {
+    "amenity": "doctors",
+    "name": "Dr. Subramaniam"
+   },
+   "lat": 12.7912891,
+   "lon": 80.0362317
+  },
+  {
+   "type": "node",
+   "id": 7820802425,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Sanjeevi Health Care"
+   },
+   "lat": 12.786869,
+   "lon": 80.014689
+  },
+  {
+   "type": "node",
+   "id": 7820802427,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "SRM Urban Health Centre"
+   },
+   "lat": 12.7998826,
+   "lon": 80.0241862
+  },
+  {
+   "type": "node",
+   "id": 7820802428,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Naturo Shifa Homeopathic Clinic"
+   },
+   "lat": 12.7938408,
+   "lon": 80.0274957
+  },
+  {
+   "type": "node",
+   "id": 7820874202,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "S.K.S. Clinic"
+   },
+   "lat": 12.84604,
+   "lon": 80.061486
+  },
+  {
+   "type": "node",
+   "id": 7820874203,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Arokya Annai Hospital"
+   },
+   "lat": 12.8467495,
+   "lon": 80.0869154
+  },
+  {
+   "type": "node",
+   "id": 7820874204,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Mohan's Ent Clinic"
+   },
+   "lat": 12.8409901,
+   "lon": 80.0561022
+  },
+  {
+   "type": "node",
+   "id": 7820874208,
+   "tags": {
+    "amenity": "clinic",
+    "name": "Esskay Speciality Clinic"
+   },
+   "lat": 12.8498789,
+   "lon": 80.0538937
+  },
+  {
+   "type": "node",
+   "id": 7820874209,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Homeopathic Clinic"
+   },
+   "lat": 12.8435375,
+   "lon": 80.0584534
+  },
+  {
+   "type": "node",
+   "id": 7820874210,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Kasturi Clinic"
+   },
+   "lat": 12.8440063,
+   "lon": 80.0587969
+  },
+  {
+   "type": "node",
+   "id": 7820874212,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Dr. V. Arunagiri Nathan Clinic"
+   },
+   "lat": 12.8507219,
+   "lon": 80.0656915
+  },
+  {
+   "type": "node",
+   "id": 7820874214,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Dr. Kumaran's Clinic"
+   },
+   "lat": 12.8433152,
+   "lon": 80.0609119
+  },
+  {
+   "type": "node",
+   "id": 7820874216,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Nirmal's Eye Clinic"
+   },
+   "lat": 12.8426583,
+   "lon": 80.0579775
+  },
+  {
+   "type": "node",
+   "id": 7820874218,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Sabari Physiotherapy Clinic"
+   },
+   "lat": 12.8673887,
+   "lon": 80.0710231
+  },
+  {
+   "type": "node",
+   "id": 7820874219,
+   "tags": {
+    "amenity": "doctors",
+    "healthcare": "doctor",
+    "name": "Dr. Ganesh"
+   },
+   "lat": 12.8387381,
+   "lon": 80.064632
+  },
+  {
+   "type": "node",
+   "id": 7820874220,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Nithya Gurru Hospital"
+   },
+   "lat": 12.867641,
+   "lon": 80.0760446
+  },
+  {
+   "type": "node",
+   "id": 7820874223,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Thangam Hospital"
+   },
+   "lat": 12.8400457,
+   "lon": 80.0560074
+  },
+  {
+   "type": "node",
+   "id": 7820874226,
+   "tags": {
+    "amenity": "hospital",
+    "name": "G.V. Hospital"
+   },
+   "lat": 12.8143321,
+   "lon": 80.0770019
+  },
+  {
+   "type": "node",
+   "id": 7820874227,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Suriya Ayurveda Hospital"
+   },
+   "lat": 12.8588635,
+   "lon": 80.0560942
+  },
+  {
+   "type": "node",
+   "id": 7820874228,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Sai Multi Speciality Clinic"
+   },
+   "lat": 12.8429838,
+   "lon": 80.0582683
+  },
+  {
+   "type": "node",
+   "id": 7820874230,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Senthil Clinic"
+   },
+   "lat": 12.8432697,
+   "lon": 80.0604225
+  },
+  {
+   "type": "node",
+   "id": 7820874231,
+   "tags": {
+    "amenity": "doctors",
+    "healthcare": "doctor",
+    "name": "Dr. R. Hemalatha"
+   },
+   "lat": 12.8518348,
+   "lon": 80.0683987
+  },
+  {
+   "type": "node",
+   "id": 7820874232,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Rishika Ortho, Spine and Joint Speciality Centre"
+   },
+   "lat": 12.8441025,
+   "lon": 80.0587314
+  },
+  {
+   "type": "node",
+   "id": 7820874235,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Sri Satya Sai Homeo Clinic"
+   },
+   "lat": 12.8441953,
+   "lon": 80.0588213
+  },
+  {
+   "type": "node",
+   "id": 7820874242,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Siddha Ayurveda Clinic"
+   },
+   "lat": 12.8473288,
+   "lon": 80.0597822
+  },
+  {
+   "type": "node",
+   "id": 7820874243,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Jeeva Clinic"
+   },
+   "lat": 12.8593698,
+   "lon": 80.0737808
+  },
+  {
+   "type": "node",
+   "id": 7820874245,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Dhanwanthri Physiotherapy Centre"
+   },
+   "lat": 12.838733,
+   "lon": 80.0576307
+  },
+  {
+   "type": "node",
+   "id": 7820874246,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Dakshan Skin Clinic"
+   },
+   "lat": 12.8499003,
+   "lon": 80.0651148
+  },
+  {
+   "type": "node",
+   "id": 7820874247,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Agaram Siddha Clinic"
+   },
+   "lat": 12.8483415,
+   "lon": 80.0631272
+  },
+  {
+   "type": "node",
+   "id": 7820874248,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Magna Open Health Service"
+   },
+   "lat": 12.8576412,
+   "lon": 80.0694728
+  },
+  {
+   "type": "node",
+   "id": 7820874250,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Arokia Annaii Clinic"
+   },
+   "lat": 12.8846426,
+   "lon": 80.0741846
+  },
+  {
+   "type": "node",
+   "id": 7820874251,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Sri Vinayaga Clinic"
+   },
+   "lat": 12.8429954,
+   "lon": 80.0606316
+  },
+  {
+   "type": "node",
+   "id": 7820874252,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Child Care Clinic"
+   },
+   "lat": 12.8432217,
+   "lon": 80.0582429
+  },
+  {
+   "type": "node",
+   "id": 7820874253,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Vasantham Clinic"
+   },
+   "lat": 12.8599548,
+   "lon": 80.0623129
+  },
+  {
+   "type": "node",
+   "id": 7820874254,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "M.M Clinic"
+   },
+   "lat": 12.8421733,
+   "lon": 80.0612804
+  },
+  {
+   "type": "node",
+   "id": 7820874255,
+   "tags": {
+    "amenity": "hospital",
+    "name": "Arokya Hospital"
+   },
+   "lat": 12.8319745,
+   "lon": 80.0708395
+  },
+  {
+   "type": "node",
+   "id": 7820874256,
+   "tags": {
+    "amenity": "clinic",
+    "name": "Lakshmi Clinic and Diagnostics"
+   },
+   "lat": 12.8226797,
+   "lon": 80.0777538
+  },
+  {
+   "type": "node",
+   "id": 7820874257,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Sabari Clinic"
+   },
+   "lat": 12.8467277,
+   "lon": 80.0613827
+  },
+  {
+   "type": "node",
+   "id": 7820874258,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Optique Netralaya"
+   },
+   "lat": 12.8417166,
+   "lon": 80.0578041
+  },
+  {
+   "type": "node",
+   "id": 7820874259,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Shree Chelly's Clinic"
+   },
+   "lat": 12.8515801,
+   "lon": 80.082912
+  },
+  {
+   "type": "node",
+   "id": 7820874262,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Aram Poly Clinic"
+   },
+   "lat": 12.8470635,
+   "lon": 80.0609595
+  },
+  {
+   "type": "node",
+   "id": 7820874263,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Arokia Annai Hospital"
+   },
+   "lat": 12.8678478,
+   "lon": 80.0648625
+  },
+  {
+   "type": "node",
+   "id": 7820874267,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Dr. Rajesh Kumar Clinic"
+   },
+   "lat": 12.8431543,
+   "lon": 80.0605129
+  },
+  {
+   "type": "node",
+   "id": 7820874268,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Deepam Hospital"
+   },
+   "lat": 12.8471514,
+   "lon": 80.0632047
+  },
+  {
+   "type": "node",
+   "id": 7820874270,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Assana Speciality Clinic"
+   },
+   "lat": 12.833454,
+   "lon": 80.069363
+  },
+  {
+   "type": "node",
+   "id": 7820874275,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Biswas Clinic"
+   },
+   "lat": 12.8487115,
+   "lon": 80.0634034
+  },
+  {
+   "type": "node",
+   "id": 7820874280,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "K.S. Child Care Hospital"
+   },
+   "lat": 12.8427807,
+   "lon": 80.0574582
+  },
+  {
+   "type": "node",
+   "id": 7820874281,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Jaya Clinic"
+   },
+   "lat": 12.8389063,
+   "lon": 80.0636321
+  },
+  {
+   "type": "node",
+   "id": 7820874285,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Sri Multi Speciality Homeopathy Clinic"
+   },
+   "lat": 12.8820866,
+   "lon": 80.0765632
+  },
+  {
+   "type": "node",
+   "id": 7820874288,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Thalir Hospital"
+   },
+   "lat": 12.8662405,
+   "lon": 80.0780594
+  },
+  {
+   "type": "node",
+   "id": 7820874289,
+   "tags": {
+    "amenity": "hospital",
+    "name": "Hosanna Hospital"
+   },
+   "lat": 12.8694008,
+   "lon": 80.0829085
+  },
+  {
+   "type": "node",
+   "id": 7820874290,
+   "tags": {
+    "amenity": "doctors",
+    "healthcare": "doctor",
+    "name": "Dr. T.J. Kishore Narayanan"
+   },
+   "lat": 12.8510492,
+   "lon": 80.0693519
+  },
+  {
+   "type": "node",
+   "id": 7820874291,
+   "tags": {
+    "amenity": "clinic",
+    "name": "Vikvin Physiotherapy"
+   },
+   "lat": 12.8276172,
+   "lon": 80.0738506
+  },
+  {
+   "type": "node",
+   "id": 7820874292,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Kaveri Clinic"
+   },
+   "lat": 12.8671807,
+   "lon": 80.0688182
+  },
+  {
+   "type": "node",
+   "id": 7820874295,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Ortho and Neuro Physiotherapy Clinic"
+   },
+   "lat": 12.8469882,
+   "lon": 80.0629364
+  },
+  {
+   "type": "node",
+   "id": 14040637565,
+   "tags": {
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Sri Krishna Clinic"
+   },
+   "lat": 12.8312056,
+   "lon": 80.0468005
+  },
+  {
+   "type": "node",
+   "id": 14233280718,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "SRM Global Hospitals"
+   },
+   "lat": 12.8235712,
+   "lon": 80.0480957
+  },
+  {
+   "type": "way",
+   "id": 1358386128,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Government Primary Health Centre"
+   },
+   "center": {
+    "lat": 12.7912032,
+    "lon": 80.0329076
+   }
+  }
+ ]
+}
