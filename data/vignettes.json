@@ -1,0 +1,138 @@
+[
+ {
+  "text": "I've had a high fever for 3 days with a terrible headache, pain behind my eyes and aching joints",
+  "expected": "dengue"
+ },
+ {
+  "text": "fever with shivering chills every evening then heavy sweating, headache and body pain",
+  "expected": "malaria"
+ },
+ {
+  "text": "fever for a week that keeps rising, stomach pain, no appetite and feeling very weak, a bit constipated",
+  "expected": "typhoid"
+ },
+ {
+  "text": "sudden high fever and my joints are so painful I can barely walk, swollen wrists and a rash",
+  "expected": "chikungunya"
+ },
+ {
+  "text": "high temperature, body aches all over, dry cough and totally exhausted since yesterday",
+  "expected": "influenza"
+ },
+ {
+  "text": "runny nose, sneezing a lot, scratchy throat, no fever",
+  "expected": "common_cold"
+ },
+ {
+  "text": "lost my sense of smell, mild fever, dry cough and tired",
+  "expected": "covid19"
+ },
+ {
+  "text": "cough for 3 weeks with phlegm, night sweats and I've lost weight",
+  "expected": "tuberculosis"
+ },
+ {
+  "text": "high fever, cough with yellow phlegm, short of breath and chest pain when breathing",
+  "expected": "pneumonia"
+ },
+ {
+  "text": "very sore throat, painful swallowing, fever and swollen glands in my neck, no cough",
+  "expected": "strep_throat"
+ },
+ {
+  "text": "pressure in my face around the nose, blocked nose and headache after a cold",
+  "expected": "sinusitis"
+ },
+ {
+  "text": "keep sneezing every morning, itchy watery eyes and running nose, no fever",
+  "expected": "allergic_rhinitis"
+ },
+ {
+  "text": "red eyes with sticky discharge and watery eyes",
+  "expected": "conjunctivitis"
+ },
+ {
+  "text": "loose motions since morning, vomiting and stomach cramps",
+  "expected": "gastroenteritis"
+ },
+ {
+  "text": "my eyes have turned yellow, urine is dark and I feel tired with no appetite",
+  "expected": "hepatitis_a"
+ },
+ {
+  "text": "burning in chest after meals, acid reflux and sour taste at night",
+  "expected": "gerd"
+ },
+ {
+  "text": "pain started near belly button and moved to the lower right abdomen, vomiting and no appetite",
+  "expected": "appendicitis"
+ },
+ {
+  "text": "burning while urinating and need to pee often",
+  "expected": "uti"
+ },
+ {
+  "text": "sudden severe pain in my side going to the groin, blood in urine and nausea",
+  "expected": "kidney_stone"
+ },
+ {
+  "text": "always thirsty, peeing a lot, tired and blurry vision",
+  "expected": "type2_diabetes"
+ },
+ {
+  "text": "shaky, sweating, dizzy and heart racing, skipped lunch",
+  "expected": "hypoglycemia"
+ },
+ {
+  "text": "always tired and weak, pale skin, dizzy and breathless on stairs",
+  "expected": "anemia"
+ },
+ {
+  "text": "gaining weight, always cold, dry skin and hair fall, constipated",
+  "expected": "hypothyroidism"
+ },
+ {
+  "text": "throbbing headache on one side with nausea, light hurts my eyes",
+  "expected": "migraine"
+ },
+ {
+  "text": "wheezing and short of breath at night with chest tightness",
+  "expected": "asthma"
+ },
+ {
+  "text": "big toe is red, hot, swollen and extremely painful",
+  "expected": "gout"
+ },
+ {
+  "text": "stiff joints every morning for an hour, swollen painful finger joints and fatigue",
+  "expected": "rheumatoid_arthritis"
+ },
+ {
+  "text": "neck pain going to my shoulder with tingling in the fingers, I sit at a laptop all day",
+  "expected": "cervical_spondylosis"
+ },
+ {
+  "text": "itchy dry skin patches in elbow folds that get red",
+  "expected": "eczema"
+ },
+ {
+  "text": "thick red patches with silvery scales on elbows and knees",
+  "expected": "psoriasis"
+ },
+ {
+  "text": "itchy blisters all over the body with a mild fever",
+  "expected": "chickenpox"
+ },
+ {
+  "text": "suddenly my heart was pounding, felt intense fear, couldn't breathe, trembling and sweating",
+  "expected": "panic_attack"
+ },
+ {
+  "text": "cough with mucus for a week after a cold, chest feels tight and slight fever",
+  "expected": "bronchitis"
+ },
+ {
+  "text": "headaches at the back of my head, dizziness and occasional blurred vision, BP was high last time",
+  "expected": "hypertension"
+ }
+]

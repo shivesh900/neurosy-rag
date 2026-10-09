@@ -1,0 +1,70 @@
+[
+ {
+  "text": "for two days I have had fever with severe body pain, my eyes hurt when I move them and I'm vomiting",
+  "expected": "dengue"
+ },
+ {
+  "text": "got back from a trip to the forest area, now getting fever with rigors and then sweating a lot",
+  "expected": "malaria"
+ },
+ {
+  "text": "I keep getting a sore throat with sneezing and a blocked nose, mild temperature",
+  "expected": "common_cold"
+ },
+ {
+  "text": "coughing for more than a month, sometimes blood in the sputum, lost appetite",
+  "expected": "tuberculosis"
+ },
+ {
+  "text": "my child has watery diarrhea and vomited three times today",
+  "expected": "gastroenteritis"
+ },
+ {
+  "text": "severe pain in the lower right part of my stomach and fever, I threw up twice",
+  "expected": "appendicitis"
+ },
+ {
+  "text": "it burns when I urinate and there is blood in my urine",
+  "expected": "uti"
+ },
+ {
+  "text": "constant thirst and urinating many times at night, cuts heal slowly",
+  "expected": "type2_diabetes"
+ },
+ {
+  "text": "feeling exhausted all the time, very pale and get breathless easily",
+  "expected": "anemia"
+ },
+ {
+  "text": "one sided pounding headache with flashing lights before it and nausea",
+  "expected": "migraine"
+ },
+ {
+  "text": "I wheeze when I exercise and get breathless with a dry cough",
+  "expected": "asthma"
+ },
+ {
+  "text": "intense itching with dry, scaly skin on my hands",
+  "expected": "eczema"
+ },
+ {
+  "text": "small fluid filled spots all over my chest and back, very itchy, slight fever",
+  "expected": "chickenpox"
+ },
+ {
+  "text": "my eyes are red and itchy and keep watering",
+  "expected": "conjunctivitis"
+ },
+ {
+  "text": "stiff neck and shoulder pain from long hours on the computer, numbness in my hand",
+  "expected": "cervical_spondylosis"
+ },
+ {
+  "text": "I have a bad cough with phlegm, high fever and I get breathless walking",
+  "expected": "pneumonia"
+ },
+ {
+  "text": "heartburn almost every night and food comes back up into my throat",
+  "expected": "gerd"
+ }
+]
