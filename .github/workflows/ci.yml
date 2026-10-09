@@ -23,3 +23,10 @@ jobs:
         run: |
           python scripts/train.py
           python scripts/evaluate.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Browser demo gives identical answers to Python
+        run: |
+          python scripts/export_web.py
+          python scripts/check_web_parity.py
