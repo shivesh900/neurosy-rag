@@ -1,0 +1,2030 @@
+{
+ "_meta": {
+  "title": "NeuroSy-RAG medical knowledge base",
+  "version": "1.0",
+  "note": "Written for this educational project from general public-health information. Not medical advice. Symptom weights are approximate prevalence estimates used to generate synthetic training data and to score knowledge-graph coverage."
+ },
+ "symptoms": {
+  "fever": {
+   "label": "fever",
+   "synonyms": [
+    "fever",
+    "temperature",
+    "feverish",
+    "febrile",
+    "pyrexia"
+   ],
+   "implies": []
+  },
+  "high_fever": {
+   "label": "high fever",
+   "synonyms": [
+    "high fever",
+    "very high temperature",
+    "high grade fever",
+    "high-grade fever",
+    "104",
+    "103"
+   ],
+   "implies": [
+    "fever"
+   ]
+  },
+  "mild_fever": {
+   "label": "mild fever",
+   "synonyms": [
+    "mild fever",
+    "low grade fever",
+    "low-grade fever",
+    "slight fever"
+   ],
+   "implies": [
+    "fever"
+   ]
+  },
+  "chills": {
+   "label": "chills",
+   "synonyms": [
+    "chills",
+    "shivering",
+    "rigors",
+    "shivers"
+   ],
+   "implies": []
+  },
+  "sweating": {
+   "label": "sweating",
+   "synonyms": [
+    "sweating",
+    "sweats",
+    "night sweats",
+    "sweaty"
+   ],
+   "implies": []
+  },
+  "headache": {
+   "label": "headache",
+   "synonyms": [
+    "headache",
+    "head ache",
+    "head hurts",
+    "head pain",
+    "head is pounding"
+   ],
+   "implies": []
+  },
+  "severe_headache": {
+   "label": "severe headache",
+   "synonyms": [
+    "severe headache",
+    "terrible headache",
+    "worst headache",
+    "throbbing headache",
+    "splitting headache"
+   ],
+   "implies": [
+    "headache"
+   ]
+  },
+  "pain_behind_eyes": {
+   "label": "pain behind eyes",
+   "synonyms": [
+    "pain behind eyes",
+    "pain behind the eyes",
+    "eye socket pain",
+    "retro-orbital pain"
+   ],
+   "implies": []
+  },
+  "fatigue": {
+   "label": "fatigue",
+   "synonyms": [
+    "fatigue",
+    "tired",
+    "tiredness",
+    "exhausted",
+    "exhaustion",
+    "lethargy",
+    "lethargic",
+    "no energy"
+   ],
+   "implies": []
+  },
+  "weakness": {
+   "label": "weakness",
+   "synonyms": [
+    "weakness",
+    "weak",
+    "feeling weak"
+   ],
+   "implies": []
+  },
+  "body_ache": {
+   "label": "body ache",
+   "synonyms": [
+    "body ache",
+    "body pain",
+    "body aches",
+    "muscle pain",
+    "muscle ache",
+    "myalgia",
+    "aching muscles",
+    "aching all over",
+    "aches all over",
+    "body aches all over"
+   ],
+   "implies": []
+  },
+  "joint_pain": {
+   "label": "joint pain",
+   "synonyms": [
+    "joint pain",
+    "joints hurt",
+    "pain in joints",
+    "arthralgia",
+    "joint ache",
+    "painful joints",
+    "painful finger joints",
+    "finger joint pain",
+    "joints painful",
+    "painful knees",
+    "knee pain",
+    "wrist pain",
+    "aching joints",
+    "achy joints",
+    "joints ache",
+    "joints aching"
+   ],
+   "implies": []
+  },
+  "joint_swelling": {
+   "label": "joint swelling",
+   "synonyms": [
+    "joint swelling",
+    "swollen joint",
+    "swollen joints",
+    "swollen knee",
+    "swollen ankle",
+    "swollen toe",
+    "swollen finger joints",
+    "swollen wrists",
+    "swollen knees",
+    "swollen fingers",
+    "joints swollen"
+   ],
+   "implies": []
+  },
+  "stiff_joints": {
+   "label": "stiff joints",
+   "synonyms": [
+    "stiff joints",
+    "joint stiffness",
+    "morning stiffness",
+    "stiffness in joints"
+   ],
+   "implies": []
+  },
+  "rash": {
+   "label": "rash",
+   "synonyms": [
+    "rash",
+    "skin rash",
+    "red spots",
+    "rashes",
+    "spots on skin",
+    "red patches"
+   ],
+   "implies": []
+  },
+  "itching": {
+   "label": "itching",
+   "synonyms": [
+    "itching",
+    "itchy",
+    "itch",
+    "pruritus"
+   ],
+   "implies": []
+  },
+  "blisters": {
+   "label": "blisters",
+   "synonyms": [
+    "blisters",
+    "fluid filled spots",
+    "vesicles",
+    "itchy blisters"
+   ],
+   "implies": []
+  },
+  "dry_skin": {
+   "label": "dry skin",
+   "synonyms": [
+    "dry skin",
+    "flaky skin",
+    "scaly skin",
+    "skin peeling",
+    "silvery scales",
+    "scales",
+    "scaly patches",
+    "dry patches"
+   ],
+   "implies": []
+  },
+  "cough": {
+   "label": "cough",
+   "synonyms": [
+    "cough",
+    "coughing"
+   ],
+   "implies": []
+  },
+  "dry_cough": {
+   "label": "dry cough",
+   "synonyms": [
+    "dry cough",
+    "tickly cough"
+   ],
+   "implies": [
+    "cough"
+   ]
+  },
+  "productive_cough": {
+   "label": "productive cough",
+   "synonyms": [
+    "productive cough",
+    "cough with phlegm",
+    "cough with mucus",
+    "phlegm",
+    "sputum",
+    "mucus"
+   ],
+   "implies": [
+    "cough"
+   ]
+  },
+  "coughing_blood": {
+   "label": "coughing blood",
+   "synonyms": [
+    "coughing blood",
+    "blood in sputum",
+    "coughing up blood",
+    "hemoptysis"
+   ],
+   "implies": [
+    "cough"
+   ]
+  },
+  "sore_throat": {
+   "label": "sore throat",
+   "synonyms": [
+    "sore throat",
+    "throat pain",
+    "scratchy throat",
+    "painful throat"
+   ],
+   "implies": []
+  },
+  "difficulty_swallowing": {
+   "label": "difficulty swallowing",
+   "synonyms": [
+    "difficulty swallowing",
+    "painful swallowing",
+    "hard to swallow"
+   ],
+   "implies": []
+  },
+  "runny_nose": {
+   "label": "runny nose",
+   "synonyms": [
+    "runny nose",
+    "running nose",
+    "nose is running",
+    "rhinorrhea"
+   ],
+   "implies": []
+  },
+  "nasal_congestion": {
+   "label": "nasal congestion",
+   "synonyms": [
+    "nasal congestion",
+    "blocked nose",
+    "stuffy nose",
+    "congestion"
+   ],
+   "implies": []
+  },
+  "sneezing": {
+   "label": "sneezing",
+   "synonyms": [
+    "sneezing",
+    "sneeze",
+    "sneezes"
+   ],
+   "implies": []
+  },
+  "loss_of_smell": {
+   "label": "loss of smell",
+   "synonyms": [
+    "loss of smell",
+    "loss of taste",
+    "can't smell",
+    "cannot smell",
+    "can't taste",
+    "anosmia"
+   ],
+   "implies": []
+  },
+  "facial_pain": {
+   "label": "facial pain",
+   "synonyms": [
+    "facial pain",
+    "face pain",
+    "pressure in face",
+    "sinus pain",
+    "pain around nose"
+   ],
+   "implies": []
+  },
+  "shortness_of_breath": {
+   "label": "shortness of breath",
+   "synonyms": [
+    "shortness of breath",
+    "short of breath",
+    "breathless",
+    "breathlessness",
+    "difficulty breathing",
+    "hard to breathe",
+    "can't breathe",
+    "trouble breathing",
+    "couldn't breathe",
+    "could not breathe",
+    "out of breath"
+   ],
+   "implies": []
+  },
+  "wheezing": {
+   "label": "wheezing",
+   "synonyms": [
+    "wheezing",
+    "wheeze",
+    "whistling breath"
+   ],
+   "implies": []
+  },
+  "chest_tightness": {
+   "label": "chest tightness",
+   "synonyms": [
+    "chest tightness",
+    "tight chest",
+    "chest feels tight"
+   ],
+   "implies": []
+  },
+  "chest_pain": {
+   "label": "chest pain",
+   "synonyms": [
+    "chest pain",
+    "pain in chest",
+    "chest hurts"
+   ],
+   "implies": []
+  },
+  "palpitations": {
+   "label": "palpitations",
+   "synonyms": [
+    "palpitations",
+    "heart racing",
+    "racing heart",
+    "pounding heart",
+    "fast heartbeat",
+    "heart pounding",
+    "heart beating fast",
+    "heart is racing",
+    "heart was racing"
+   ],
+   "implies": []
+  },
+  "nausea": {
+   "label": "nausea",
+   "synonyms": [
+    "nausea",
+    "nauseous",
+    "feel like vomiting",
+    "queasy"
+   ],
+   "implies": []
+  },
+  "vomiting": {
+   "label": "vomiting",
+   "synonyms": [
+    "vomiting",
+    "throwing up",
+    "vomit",
+    "puking",
+    "threw up"
+   ],
+   "implies": []
+  },
+  "diarrhea": {
+   "label": "diarrhea",
+   "synonyms": [
+    "diarrhea",
+    "diarrhoea",
+    "loose motion",
+    "loose motions",
+    "loose stools",
+    "watery stools"
+   ],
+   "implies": []
+  },
+  "constipation": {
+   "label": "constipation",
+   "synonyms": [
+    "constipation",
+    "constipated"
+   ],
+   "implies": []
+  },
+  "abdominal_pain": {
+   "label": "abdominal pain",
+   "synonyms": [
+    "abdominal pain",
+    "stomach pain",
+    "stomach ache",
+    "belly pain",
+    "tummy pain",
+    "stomach cramps",
+    "abdominal cramps"
+   ],
+   "implies": []
+  },
+  "lower_right_abdominal_pain": {
+   "label": "lower right abdominal pain",
+   "synonyms": [
+    "lower right abdominal pain",
+    "pain in lower right abdomen",
+    "right lower abdomen",
+    "pain near belly button moving to the right",
+    "lower right abdomen",
+    "lower right side of my abdomen",
+    "right lower quadrant",
+    "lower right part of my stomach",
+    "lower right stomach",
+    "right lower belly"
+   ],
+   "implies": [
+    "abdominal_pain"
+   ]
+  },
+  "upper_abdominal_pain": {
+   "label": "upper abdominal pain",
+   "synonyms": [
+    "upper abdominal pain",
+    "upper stomach pain",
+    "pain in upper abdomen"
+   ],
+   "implies": [
+    "abdominal_pain"
+   ]
+  },
+  "loss_of_appetite": {
+   "label": "loss of appetite",
+   "synonyms": [
+    "loss of appetite",
+    "not hungry",
+    "no appetite",
+    "poor appetite"
+   ],
+   "implies": []
+  },
+  "bloating": {
+   "label": "bloating",
+   "synonyms": [
+    "bloating",
+    "bloated",
+    "gas"
+   ],
+   "implies": []
+  },
+  "heartburn": {
+   "label": "heartburn",
+   "synonyms": [
+    "heartburn",
+    "acid reflux",
+    "burning in chest",
+    "acidity"
+   ],
+   "implies": []
+  },
+  "regurgitation": {
+   "label": "regurgitation",
+   "synonyms": [
+    "regurgitation",
+    "food coming back up",
+    "acid coming up",
+    "food comes back up",
+    "comes back up",
+    "sour taste",
+    "sour taste in mouth"
+   ],
+   "implies": []
+  },
+  "yellow_skin": {
+   "label": "yellow skin",
+   "synonyms": [
+    "yellow skin",
+    "yellow eyes",
+    "jaundice",
+    "yellowing of eyes",
+    "yellowish skin",
+    "eyes yellow",
+    "skin yellow"
+   ],
+   "implies": []
+  },
+  "dark_urine": {
+   "label": "dark urine",
+   "synonyms": [
+    "dark urine",
+    "dark colored urine",
+    "tea coloured urine",
+    "urine dark"
+   ],
+   "implies": []
+  },
+  "burning_urination": {
+   "label": "burning urination",
+   "synonyms": [
+    "burning urination",
+    "burning while urinating",
+    "painful urination",
+    "pain while peeing",
+    "burning when i pee",
+    "dysuria"
+   ],
+   "implies": []
+  },
+  "frequent_urination": {
+   "label": "frequent urination",
+   "synonyms": [
+    "frequent urination",
+    "urinating often",
+    "peeing a lot",
+    "need to pee often",
+    "urinating many times",
+    "urinating a lot",
+    "pee a lot"
+   ],
+   "implies": []
+  },
+  "blood_in_urine": {
+   "label": "blood in urine",
+   "synonyms": [
+    "blood in urine",
+    "red urine",
+    "hematuria"
+   ],
+   "implies": []
+  },
+  "flank_pain": {
+   "label": "flank pain",
+   "synonyms": [
+    "flank pain",
+    "side pain",
+    "pain in my side",
+    "back side pain",
+    "pain in lower back side"
+   ],
+   "implies": []
+  },
+  "back_pain": {
+   "label": "back pain",
+   "synonyms": [
+    "back pain",
+    "lower back pain",
+    "backache"
+   ],
+   "implies": []
+  },
+  "neck_pain": {
+   "label": "neck pain",
+   "synonyms": [
+    "neck pain",
+    "stiff neck",
+    "neck stiffness"
+   ],
+   "implies": []
+  },
+  "excessive_thirst": {
+   "label": "excessive thirst",
+   "synonyms": [
+    "excessive thirst",
+    "very thirsty",
+    "always thirsty",
+    "increased thirst",
+    "thirst",
+    "constant thirst"
+   ],
+   "implies": []
+  },
+  "blurred_vision": {
+   "label": "blurred vision",
+   "synonyms": [
+    "blurred vision",
+    "blurry vision"
+   ],
+   "implies": []
+  },
+  "slow_healing": {
+   "label": "slow healing",
+   "synonyms": [
+    "slow healing",
+    "wounds heal slowly",
+    "slow healing wounds"
+   ],
+   "implies": []
+  },
+  "weight_loss": {
+   "label": "weight loss",
+   "synonyms": [
+    "weight loss",
+    "losing weight",
+    "lost weight"
+   ],
+   "implies": []
+  },
+  "weight_gain": {
+   "label": "weight gain",
+   "synonyms": [
+    "weight gain",
+    "gaining weight",
+    "gained weight"
+   ],
+   "implies": []
+  },
+  "cold_intolerance": {
+   "label": "cold intolerance",
+   "synonyms": [
+    "cold intolerance",
+    "always cold",
+    "feel cold",
+    "sensitive to cold"
+   ],
+   "implies": []
+  },
+  "hair_loss": {
+   "label": "hair loss",
+   "synonyms": [
+    "hair loss",
+    "hair fall",
+    "losing hair"
+   ],
+   "implies": []
+  },
+  "dizziness": {
+   "label": "dizziness",
+   "synonyms": [
+    "dizziness",
+    "dizzy",
+    "lightheaded",
+    "light headed",
+    "giddiness",
+    "vertigo"
+   ],
+   "implies": []
+  },
+  "pale_skin": {
+   "label": "pale skin",
+   "synonyms": [
+    "pale skin",
+    "pale",
+    "pallor"
+   ],
+   "implies": []
+  },
+  "cold_hands": {
+   "label": "cold hands",
+   "synonyms": [
+    "cold hands",
+    "cold feet",
+    "cold hands and feet"
+   ],
+   "implies": []
+  },
+  "trembling": {
+   "label": "trembling",
+   "synonyms": [
+    "trembling",
+    "tremor",
+    "shaky",
+    "shaking"
+   ],
+   "implies": []
+  },
+  "confusion": {
+   "label": "confusion",
+   "synonyms": [
+    "confusion",
+    "confused",
+    "disoriented"
+   ],
+   "implies": []
+  },
+  "anxiety": {
+   "label": "anxiety",
+   "synonyms": [
+    "anxiety",
+    "anxious",
+    "nervous",
+    "nervousness",
+    "panic",
+    "fear of dying",
+    "sense of doom",
+    "fear",
+    "scared",
+    "terrified",
+    "intense fear",
+    "panicky"
+   ],
+   "implies": []
+  },
+  "sensitivity_to_light": {
+   "label": "sensitivity to light",
+   "synonyms": [
+    "sensitivity to light",
+    "light sensitivity",
+    "photophobia",
+    "light hurts my eyes"
+   ],
+   "implies": []
+  },
+  "visual_aura": {
+   "label": "visual aura",
+   "synonyms": [
+    "aura",
+    "zigzag lines",
+    "flashing lights",
+    "visual disturbance"
+   ],
+   "implies": []
+  },
+  "red_eyes": {
+   "label": "red eyes",
+   "synonyms": [
+    "red eyes",
+    "eye redness",
+    "pink eye",
+    "bloodshot eyes"
+   ],
+   "implies": []
+  },
+  "watery_eyes": {
+   "label": "watery eyes",
+   "synonyms": [
+    "watery eyes",
+    "teary eyes",
+    "eyes watering"
+   ],
+   "implies": []
+  },
+  "eye_discharge": {
+   "label": "eye discharge",
+   "synonyms": [
+    "eye discharge",
+    "sticky eyes",
+    "crusty eyes"
+   ],
+   "implies": []
+  },
+  "swollen_lymph_nodes": {
+   "label": "swollen lymph nodes",
+   "synonyms": [
+    "swollen lymph nodes",
+    "swollen glands",
+    "swollen neck glands"
+   ],
+   "implies": []
+  },
+  "hoarse_voice": {
+   "label": "hoarse voice",
+   "synonyms": [
+    "hoarse voice",
+    "hoarseness",
+    "lost my voice"
+   ],
+   "implies": []
+  },
+  "chronic_cough": {
+   "label": "chronic cough",
+   "synonyms": [
+    "chronic cough",
+    "cough for weeks",
+    "cough for more than 2 weeks",
+    "cough for 3 weeks",
+    "persistent cough",
+    "long-lasting cough"
+   ],
+   "implies": [
+    "cough"
+   ]
+  },
+  "numbness": {
+   "label": "numbness",
+   "synonyms": [
+    "numbness",
+    "tingling",
+    "pins and needles",
+    "numb"
+   ],
+   "implies": []
+  },
+  "redness_over_joint": {
+   "label": "redness over joint",
+   "synonyms": [
+    "redness over joint",
+    "red joint",
+    "hot joint",
+    "warm swollen joint",
+    "red toe",
+    "red and swollen",
+    "hot and swollen",
+    "red, hot",
+    "red hot joint"
+   ],
+   "implies": []
+  },
+  "big_toe_pain": {
+   "label": "big toe pain",
+   "synonyms": [
+    "big toe pain",
+    "pain in big toe",
+    "toe pain",
+    "big toe",
+    "painful toe",
+    "toe joint pain"
+   ],
+   "implies": [
+    "joint_pain"
+   ]
+  },
+  "shoulder_pain": {
+   "label": "shoulder pain",
+   "synonyms": [
+    "shoulder pain",
+    "pain in shoulder"
+   ],
+   "implies": []
+  },
+  "nosebleed_or_gum_bleeding": {
+   "label": "bleeding gums or nose",
+   "synonyms": [
+    "bleeding gums",
+    "nosebleed",
+    "nose bleed",
+    "gum bleeding",
+    "bleeding from nose"
+   ],
+   "implies": []
+  }
+ },
+ "diseases": {
+  "dengue": {
+   "name": "Dengue fever",
+   "icd10": "A90",
+   "specialty": "Infectious Diseases",
+   "risk_level": "high",
+   "symptoms": {
+    "high_fever": 0.9,
+    "severe_headache": 0.7,
+    "pain_behind_eyes": 0.6,
+    "body_ache": 0.8,
+    "joint_pain": 0.7,
+    "rash": 0.5,
+    "nausea": 0.5,
+    "vomiting": 0.35,
+    "fatigue": 0.6,
+    "nosebleed_or_gum_bleeding": 0.1
+   },
+   "requires": [
+    [
+     "fever"
+    ]
+   ],
+   "red_flags": [
+    "bleeding from gums or nose",
+    "severe abdominal pain",
+    "persistent vomiting",
+    "extreme tiredness or restlessness"
+   ],
+   "description": "A mosquito-borne viral infection spread by Aedes mosquitoes, common in India during and after the monsoon. Most people recover in about a week, but a small share develop severe dengue with bleeding and plasma leakage.",
+   "precautions": [
+    "Rest and drink plenty of fluids (ORS, water, coconut water).",
+    "Use paracetamol for fever; avoid aspirin and ibuprofen because they raise bleeding risk.",
+    "Use mosquito nets and repellent so the illness does not spread to others.",
+    "Get a platelet count / NS1 or dengue antibody test as advised by a doctor."
+   ],
+   "see_doctor": "See a doctor within a day for a blood test if you have high fever with body or eye pain. Go to emergency care immediately for bleeding, severe abdominal pain, repeated vomiting or drowsiness, especially 3 to 7 days into the illness."
+  },
+  "malaria": {
+   "name": "Malaria",
+   "icd10": "B54",
+   "specialty": "Infectious Diseases",
+   "risk_level": "high",
+   "symptoms": {
+    "high_fever": 0.85,
+    "chills": 0.85,
+    "sweating": 0.7,
+    "headache": 0.6,
+    "body_ache": 0.5,
+    "nausea": 0.45,
+    "vomiting": 0.35,
+    "fatigue": 0.6,
+    "diarrhea": 0.15
+   },
+   "requires": [
+    [
+     "fever"
+    ]
+   ],
+   "red_flags": [
+    "confusion or drowsiness",
+    "difficulty breathing",
+    "dark or reduced urine",
+    "yellow eyes"
+   ],
+   "description": "A parasitic infection transmitted by Anopheles mosquitoes. It classically causes cycles of fever, shaking chills and heavy sweating. Plasmodium falciparum malaria can become severe quickly.",
+   "precautions": [
+    "Get tested (rapid diagnostic test or blood smear) before starting treatment.",
+    "Complete the full antimalarial course prescribed by a doctor.",
+    "Sleep under insecticide-treated nets and remove standing water."
+   ],
+   "see_doctor": "Any fever with chills after mosquito exposure in an endemic area needs a malaria test the same day. Confusion, breathing difficulty or jaundice are emergencies."
+  },
+  "typhoid": {
+   "name": "Typhoid fever",
+   "icd10": "A01.0",
+   "specialty": "Infectious Diseases",
+   "risk_level": "high",
+   "symptoms": {
+    "fever": 0.95,
+    "headache": 0.6,
+    "abdominal_pain": 0.6,
+    "constipation": 0.35,
+    "diarrhea": 0.3,
+    "loss_of_appetite": 0.6,
+    "fatigue": 0.7,
+    "weakness": 0.55,
+    "rash": 0.1
+   },
+   "requires": [
+    [
+     "fever"
+    ]
+   ],
+   "red_flags": [
+    "severe abdominal pain",
+    "blood in stool",
+    "confusion"
+   ],
+   "description": "A bacterial infection caused by Salmonella Typhi, spread through contaminated food and water. Fever typically rises step by step over several days, with abdominal discomfort and weakness.",
+   "precautions": [
+    "Drink only boiled or bottled water and eat freshly cooked food.",
+    "Take antibiotics only as prescribed and finish the course.",
+    "Wash hands with soap before eating and after using the toilet."
+   ],
+   "see_doctor": "A fever lasting more than 3 days, with abdominal pain or weakness, needs a doctor and a blood test (blood culture or other tests the doctor chooses)."
+  },
+  "chikungunya": {
+   "name": "Chikungunya",
+   "icd10": "A92.0",
+   "specialty": "Infectious Diseases",
+   "risk_level": "medium",
+   "symptoms": {
+    "high_fever": 0.85,
+    "joint_pain": 0.95,
+    "joint_swelling": 0.5,
+    "rash": 0.5,
+    "headache": 0.5,
+    "body_ache": 0.6,
+    "fatigue": 0.6,
+    "nausea": 0.2
+   },
+   "requires": [
+    [
+     "fever"
+    ],
+    [
+     "joint_pain"
+    ]
+   ],
+   "red_flags": [
+    "severe dehydration",
+    "confusion"
+   ],
+   "description": "A mosquito-borne viral illness spread by Aedes mosquitoes. Its hallmark is severe, often disabling joint pain that can last weeks to months after the fever settles.",
+   "precautions": [
+    "Rest, fluids and paracetamol for fever and pain.",
+    "Avoid aspirin until dengue has been ruled out.",
+    "Gentle joint movement once the fever settles; use mosquito protection."
+   ],
+   "see_doctor": "See a doctor to confirm the diagnosis and rule out dengue, especially if you have bleeding, or if joint pain persists beyond a few weeks."
+  },
+  "influenza": {
+   "name": "Influenza (flu)",
+   "icd10": "J11",
+   "specialty": "General Medicine",
+   "risk_level": "medium",
+   "symptoms": {
+    "high_fever": 0.7,
+    "chills": 0.6,
+    "body_ache": 0.8,
+    "headache": 0.6,
+    "dry_cough": 0.75,
+    "sore_throat": 0.5,
+    "fatigue": 0.85,
+    "runny_nose": 0.35
+   },
+   "requires": [
+    [
+     "fever"
+    ],
+    [
+     "cough",
+     "sore_throat",
+     "body_ache"
+    ]
+   ],
+   "red_flags": [
+    "difficulty breathing",
+    "chest pain",
+    "confusion",
+    "symptoms that improve then worsen"
+   ],
+   "description": "A contagious respiratory infection caused by influenza viruses. It starts suddenly with fever, body aches and exhaustion, and is usually more severe than a common cold.",
+   "precautions": [
+    "Rest, stay home and drink fluids.",
+    "Paracetamol for fever and aches.",
+    "Cover coughs and wash hands; an annual flu vaccine reduces risk."
+   ],
+   "see_doctor": "Most people recover within 1 to 2 weeks. See a doctor early if you are pregnant, elderly, have a chronic illness, or develop breathing difficulty."
+  },
+  "common_cold": {
+   "name": "Common cold",
+   "icd10": "J00",
+   "specialty": "General Medicine",
+   "risk_level": "low",
+   "symptoms": {
+    "runny_nose": 0.9,
+    "sneezing": 0.8,
+    "nasal_congestion": 0.8,
+    "sore_throat": 0.6,
+    "cough": 0.5,
+    "mild_fever": 0.25,
+    "headache": 0.3,
+    "fatigue": 0.3
+   },
+   "requires": [
+    [
+     "runny_nose",
+     "nasal_congestion",
+     "sneezing",
+     "sore_throat"
+    ]
+   ],
+   "red_flags": [
+    "difficulty breathing",
+    "high fever lasting more than 3 days"
+   ],
+   "description": "A mild viral infection of the nose and throat, most often caused by rhinoviruses. It usually clears up on its own within 7 to 10 days.",
+   "precautions": [
+    "Rest, warm fluids and steam inhalation.",
+    "Saline nasal drops and throat lozenges for comfort.",
+    "Antibiotics do not help a cold."
+   ],
+   "see_doctor": "See a doctor if symptoms last more than 10 days, fever is high, or you have trouble breathing."
+  },
+  "covid19": {
+   "name": "COVID-19",
+   "icd10": "U07.1",
+   "specialty": "General Medicine",
+   "risk_level": "medium",
+   "symptoms": {
+    "fever": 0.7,
+    "dry_cough": 0.7,
+    "fatigue": 0.7,
+    "loss_of_smell": 0.45,
+    "sore_throat": 0.45,
+    "headache": 0.45,
+    "body_ache": 0.45,
+    "shortness_of_breath": 0.3,
+    "diarrhea": 0.15,
+    "runny_nose": 0.25
+   },
+   "requires": [
+    [
+     "fever",
+     "cough",
+     "loss_of_smell",
+     "sore_throat"
+    ]
+   ],
+   "red_flags": [
+    "difficulty breathing",
+    "persistent chest pain",
+    "bluish lips",
+    "confusion"
+   ],
+   "description": "An infection caused by the SARS-CoV-2 coronavirus. Symptoms range from mild cold-like illness to pneumonia. Sudden loss of smell or taste is a distinctive sign.",
+   "precautions": [
+    "Test and isolate while symptomatic.",
+    "Rest, fluids and paracetamol for fever.",
+    "Monitor oxygen saturation with a pulse oximeter if available."
+   ],
+   "see_doctor": "Seek care if oxygen saturation drops below 94%, breathing becomes difficult, or you are in a high-risk group."
+  },
+  "tuberculosis": {
+   "name": "Pulmonary tuberculosis",
+   "icd10": "A15",
+   "specialty": "Pulmonology",
+   "risk_level": "high",
+   "symptoms": {
+    "chronic_cough": 0.9,
+    "productive_cough": 0.6,
+    "coughing_blood": 0.3,
+    "fever": 0.6,
+    "sweating": 0.6,
+    "weight_loss": 0.7,
+    "loss_of_appetite": 0.5,
+    "fatigue": 0.6,
+    "chest_pain": 0.3
+   },
+   "requires": [
+    [
+     "chronic_cough"
+    ]
+   ],
+   "red_flags": [
+    "coughing blood",
+    "severe breathlessness"
+   ],
+   "description": "A bacterial infection by Mycobacterium tuberculosis that mainly affects the lungs and spreads through the air. India's national programme provides free testing and treatment.",
+   "precautions": [
+    "Cover your mouth when coughing and keep rooms ventilated.",
+    "Get a sputum test (and chest X-ray) at a government TB centre or clinic.",
+    "If diagnosed, take every dose of the 6-month treatment."
+   ],
+   "see_doctor": "A cough lasting 2 weeks or more, especially with fever, night sweats or weight loss, needs a TB test."
+  },
+  "pneumonia": {
+   "name": "Pneumonia",
+   "icd10": "J18.9",
+   "specialty": "Pulmonology",
+   "risk_level": "high",
+   "symptoms": {
+    "high_fever": 0.7,
+    "productive_cough": 0.8,
+    "shortness_of_breath": 0.75,
+    "chest_pain": 0.55,
+    "chills": 0.6,
+    "fatigue": 0.65,
+    "sweating": 0.3,
+    "confusion": 0.1
+   },
+   "requires": [
+    [
+     "cough"
+    ],
+    [
+     "fever",
+     "shortness_of_breath"
+    ]
+   ],
+   "red_flags": [
+    "severe breathlessness",
+    "bluish lips",
+    "confusion",
+    "oxygen saturation below 94%"
+   ],
+   "description": "An infection that inflames the air sacs of one or both lungs, which may fill with fluid or pus. It can be caused by bacteria, viruses or fungi.",
+   "precautions": [
+    "Rest semi-upright and keep hydrated.",
+    "Antibiotics only on prescription.",
+    "Monitor breathing and oxygen saturation."
+   ],
+   "see_doctor": "Pneumonia needs a doctor's assessment. Fast breathing, low oxygen or confusion, especially in elderly people or children, needs emergency care."
+  },
+  "bronchitis": {
+   "name": "Acute bronchitis",
+   "icd10": "J20",
+   "specialty": "Pulmonology",
+   "risk_level": "low",
+   "symptoms": {
+    "cough": 0.95,
+    "productive_cough": 0.7,
+    "chest_tightness": 0.5,
+    "wheezing": 0.35,
+    "mild_fever": 0.35,
+    "fatigue": 0.5,
+    "sore_throat": 0.4
+   },
+   "requires": [
+    [
+     "cough"
+    ]
+   ],
+   "red_flags": [
+    "coughing blood",
+    "high fever",
+    "cough lasting more than 3 weeks"
+   ],
+   "description": "Inflammation of the airways (bronchi), usually after a cold, causing a cough that can last up to 3 weeks.",
+   "precautions": [
+    "Rest, fluids, honey and warm drinks.",
+    "Avoid smoke and dust.",
+    "Antibiotics usually aren't needed for viral bronchitis."
+   ],
+   "see_doctor": "See a doctor if the cough lasts more than 3 weeks, you cough up blood, or you become breathless."
+  },
+  "strep_throat": {
+   "name": "Streptococcal pharyngitis",
+   "icd10": "J02.0",
+   "specialty": "ENT",
+   "risk_level": "low",
+   "symptoms": {
+    "sore_throat": 0.95,
+    "difficulty_swallowing": 0.7,
+    "fever": 0.75,
+    "swollen_lymph_nodes": 0.65,
+    "headache": 0.4,
+    "body_ache": 0.3,
+    "nausea": 0.2
+   },
+   "requires": [
+    [
+     "sore_throat"
+    ]
+   ],
+   "red_flags": [
+    "difficulty breathing",
+    "drooling or unable to swallow saliva"
+   ],
+   "description": "A bacterial throat infection with sudden throat pain, fever and swollen neck glands, usually without the cough and runny nose of a cold.",
+   "precautions": [
+    "Warm salt-water gargles and soft foods.",
+    "See a doctor for a throat swab; strep needs antibiotics.",
+    "Avoid sharing utensils."
+   ],
+   "see_doctor": "See a doctor for sore throat with fever and swollen glands but no cough. Inability to swallow or breathe well is an emergency."
+  },
+  "sinusitis": {
+   "name": "Acute sinusitis",
+   "icd10": "J01",
+   "specialty": "ENT",
+   "risk_level": "low",
+   "symptoms": {
+    "facial_pain": 0.85,
+    "nasal_congestion": 0.85,
+    "headache": 0.6,
+    "runny_nose": 0.6,
+    "mild_fever": 0.3,
+    "cough": 0.3,
+    "loss_of_smell": 0.3,
+    "fatigue": 0.3
+   },
+   "requires": [
+    [
+     "facial_pain",
+     "nasal_congestion"
+    ]
+   ],
+   "red_flags": [
+    "swelling around the eyes",
+    "severe headache with stiff neck"
+   ],
+   "description": "Inflammation of the sinuses, usually after a cold, causing facial pain or pressure, a blocked nose and thick discharge.",
+   "precautions": [
+    "Steam inhalation and saline nasal rinses.",
+    "Paracetamol for pain.",
+    "Most cases clear in 2 to 3 weeks without antibiotics."
+   ],
+   "see_doctor": "See a doctor if symptoms last more than 10 days, are severe, or include eye swelling or vision changes."
+  },
+  "allergic_rhinitis": {
+   "name": "Allergic rhinitis",
+   "icd10": "J30",
+   "specialty": "ENT",
+   "risk_level": "low",
+   "symptoms": {
+    "sneezing": 0.9,
+    "runny_nose": 0.85,
+    "nasal_congestion": 0.7,
+    "itching": 0.5,
+    "watery_eyes": 0.6,
+    "red_eyes": 0.35,
+    "cough": 0.2
+   },
+   "requires": [
+    [
+     "sneezing",
+     "runny_nose"
+    ]
+   ],
+   "red_flags": [
+    "wheezing or breathlessness"
+   ],
+   "description": "An allergic reaction to airborne triggers such as dust mites, pollen or pet dander. It causes sneezing, a runny nose and itchy, watery eyes without fever.",
+   "precautions": [
+    "Identify and avoid triggers (dust, pollen, smoke).",
+    "Wash bedding in hot water; keep windows closed in high-pollen seasons.",
+    "Ask a doctor or pharmacist about antihistamines or nasal sprays."
+   ],
+   "see_doctor": "See a doctor if symptoms disturb sleep or work, or if you also wheeze."
+  },
+  "conjunctivitis": {
+   "name": "Conjunctivitis",
+   "icd10": "H10",
+   "specialty": "Ophthalmology",
+   "risk_level": "low",
+   "symptoms": {
+    "red_eyes": 0.95,
+    "watery_eyes": 0.7,
+    "eye_discharge": 0.6,
+    "itching": 0.5,
+    "sensitivity_to_light": 0.2
+   },
+   "requires": [
+    [
+     "red_eyes"
+    ]
+   ],
+   "red_flags": [
+    "eye pain",
+    "reduced vision",
+    "severe light sensitivity"
+   ],
+   "description": "Inflammation of the thin membrane covering the eye ('pink eye'), caused by viruses, bacteria or allergies.",
+   "precautions": [
+    "Do not rub your eyes; wash hands often.",
+    "Use a clean cloth for each eye and don't share towels.",
+    "Avoid contact lenses until it clears."
+   ],
+   "see_doctor": "See an eye doctor for pain, blurred vision, or light sensitivity."
+  },
+  "gastroenteritis": {
+   "name": "Acute gastroenteritis",
+   "icd10": "A09",
+   "specialty": "Gastroenterology",
+   "risk_level": "medium",
+   "symptoms": {
+    "diarrhea": 0.95,
+    "vomiting": 0.65,
+    "nausea": 0.75,
+    "abdominal_pain": 0.7,
+    "mild_fever": 0.35,
+    "loss_of_appetite": 0.5,
+    "fatigue": 0.4
+   },
+   "requires": [
+    [
+     "diarrhea",
+     "vomiting"
+    ]
+   ],
+   "red_flags": [
+    "signs of dehydration (very little urine, dizziness)",
+    "blood in stool",
+    "diarrhoea lasting more than 3 days"
+   ],
+   "description": "Infection of the stomach and intestines, often from contaminated food or water ('stomach flu' or food poisoning). It causes diarrhoea, vomiting and cramps.",
+   "precautions": [
+    "Oral rehydration solution (ORS) after each loose stool.",
+    "Small, light meals; continue breastfeeding infants.",
+    "Wash hands well and avoid preparing food for others."
+   ],
+   "see_doctor": "Seek care for signs of dehydration, bloody stools, high fever, or if a child or elderly person is affected."
+  },
+  "hepatitis_a": {
+   "name": "Hepatitis A",
+   "icd10": "B15",
+   "specialty": "Gastroenterology",
+   "risk_level": "medium",
+   "symptoms": {
+    "yellow_skin": 0.85,
+    "dark_urine": 0.7,
+    "fatigue": 0.8,
+    "loss_of_appetite": 0.7,
+    "nausea": 0.6,
+    "upper_abdominal_pain": 0.5,
+    "mild_fever": 0.4,
+    "vomiting": 0.3
+   },
+   "requires": [
+    [
+     "yellow_skin",
+     "dark_urine"
+    ]
+   ],
+   "red_flags": [
+    "confusion or drowsiness",
+    "bleeding",
+    "severe vomiting"
+   ],
+   "description": "A viral liver infection spread through contaminated food and water. It causes jaundice (yellow skin and eyes), dark urine and tiredness, and usually resolves on its own.",
+   "precautions": [
+    "Rest, fluids and a light diet.",
+    "Avoid alcohol and unnecessary medicines that strain the liver.",
+    "Practise strict hand hygiene; the vaccine prevents it."
+   ],
+   "see_doctor": "Jaundice always needs a doctor and liver function tests. Confusion or bleeding is an emergency."
+  },
+  "gerd": {
+   "name": "Gastro-oesophageal reflux disease",
+   "icd10": "K21",
+   "specialty": "Gastroenterology",
+   "risk_level": "low",
+   "symptoms": {
+    "heartburn": 0.95,
+    "regurgitation": 0.6,
+    "chest_pain": 0.3,
+    "nausea": 0.3,
+    "sore_throat": 0.25,
+    "hoarse_voice": 0.2,
+    "dry_cough": 0.25,
+    "bloating": 0.35
+   },
+   "requires": [
+    [
+     "heartburn",
+     "regurgitation"
+    ]
+   ],
+   "red_flags": [
+    "difficulty swallowing",
+    "vomiting blood",
+    "black stools",
+    "weight loss"
+   ],
+   "description": "Stomach acid flowing back into the food pipe, causing heartburn and regurgitation, often after meals or when lying down.",
+   "precautions": [
+    "Eat smaller meals; avoid lying down for 2 to 3 hours after eating.",
+    "Cut down on spicy and fatty food, caffeine, alcohol and smoking.",
+    "Raise the head of the bed."
+   ],
+   "see_doctor": "See a doctor if symptoms occur more than twice a week or you have trouble swallowing. Chest pain should be checked to rule out a heart cause."
+  },
+  "appendicitis": {
+   "name": "Appendicitis",
+   "icd10": "K35",
+   "specialty": "General Surgery",
+   "risk_level": "high",
+   "symptoms": {
+    "lower_right_abdominal_pain": 0.95,
+    "nausea": 0.7,
+    "vomiting": 0.55,
+    "loss_of_appetite": 0.75,
+    "fever": 0.5,
+    "constipation": 0.2,
+    "diarrhea": 0.15
+   },
+   "requires": [
+    [
+     "lower_right_abdominal_pain"
+    ]
+   ],
+   "red_flags": [
+    "severe worsening abdominal pain",
+    "rigid abdomen",
+    "high fever"
+   ],
+   "description": "Inflammation of the appendix. Pain often starts around the navel and moves to the lower right abdomen. It is a surgical emergency because the appendix can burst.",
+   "precautions": [
+    "Do not eat, drink or take painkillers or laxatives until a doctor has examined you.",
+    "Do not apply heat to the abdomen."
+   ],
+   "see_doctor": "Go to an emergency department promptly for lower right abdominal pain with fever or vomiting."
+  },
+  "uti": {
+   "name": "Urinary tract infection",
+   "icd10": "N39.0",
+   "specialty": "Urology",
+   "risk_level": "low",
+   "symptoms": {
+    "burning_urination": 0.9,
+    "frequent_urination": 0.85,
+    "abdominal_pain": 0.45,
+    "blood_in_urine": 0.25,
+    "mild_fever": 0.3,
+    "back_pain": 0.15
+   },
+   "requires": [
+    [
+     "burning_urination",
+     "frequent_urination"
+    ]
+   ],
+   "red_flags": [
+    "high fever with flank pain",
+    "vomiting",
+    "confusion in elderly people"
+   ],
+   "description": "A bacterial infection of the bladder or urethra. It causes burning and frequent urination, and is much more common in women.",
+   "precautions": [
+    "Drink plenty of water.",
+    "Don't hold urine for long.",
+    "See a doctor for a urine test; antibiotics need a prescription."
+   ],
+   "see_doctor": "See a doctor within a day or two. Fever with back or side pain may mean a kidney infection and needs urgent care."
+  },
+  "kidney_stone": {
+   "name": "Kidney stone (renal colic)",
+   "icd10": "N20",
+   "specialty": "Urology",
+   "risk_level": "medium",
+   "symptoms": {
+    "flank_pain": 0.95,
+    "abdominal_pain": 0.5,
+    "blood_in_urine": 0.6,
+    "nausea": 0.6,
+    "vomiting": 0.45,
+    "burning_urination": 0.3,
+    "frequent_urination": 0.3,
+    "sweating": 0.3
+   },
+   "requires": [
+    [
+     "flank_pain"
+    ]
+   ],
+   "red_flags": [
+    "fever with flank pain",
+    "unable to pass urine",
+    "uncontrolled pain"
+   ],
+   "description": "Hard mineral deposits in the kidney or ureter. A moving stone causes severe, wave-like pain in the side or back that can spread to the groin.",
+   "precautions": [
+    "Drink plenty of water.",
+    "Pain relief as advised by a doctor.",
+    "Strain urine to catch the stone for analysis if advised."
+   ],
+   "see_doctor": "Seek urgent care for severe pain, fever, or inability to pass urine."
+  },
+  "hypertension": {
+   "name": "Hypertension",
+   "icd10": "I10",
+   "specialty": "Cardiology",
+   "risk_level": "medium",
+   "symptoms": {
+    "headache": 0.5,
+    "dizziness": 0.45,
+    "blurred_vision": 0.25,
+    "palpitations": 0.3,
+    "fatigue": 0.3,
+    "chest_pain": 0.15,
+    "nosebleed_or_gum_bleeding": 0.1,
+    "neck_pain": 0.2
+   },
+   "requires": [
+    [
+     "headache",
+     "dizziness",
+     "blurred_vision",
+     "palpitations"
+    ]
+   ],
+   "red_flags": [
+    "BP above 180/120 with headache, chest pain, breathlessness or vision change"
+   ],
+   "description": "Persistently raised blood pressure. It is often silent ('the silent killer') and is a leading risk factor for stroke and heart disease.",
+   "precautions": [
+    "Check blood pressure on more than one day.",
+    "Reduce salt, stay active, keep a healthy weight, limit alcohol, stop smoking.",
+    "Take prescribed medicines regularly."
+   ],
+   "see_doctor": "Anyone with readings above 140/90 should see a doctor. Very high readings with symptoms are an emergency."
+  },
+  "type2_diabetes": {
+   "name": "Type 2 diabetes",
+   "icd10": "E11",
+   "specialty": "Endocrinology",
+   "risk_level": "medium",
+   "symptoms": {
+    "excessive_thirst": 0.85,
+    "frequent_urination": 0.85,
+    "fatigue": 0.6,
+    "blurred_vision": 0.4,
+    "slow_healing": 0.4,
+    "weight_loss": 0.35,
+    "numbness": 0.3,
+    "itching": 0.2
+   },
+   "requires": [
+    [
+     "excessive_thirst",
+     "frequent_urination"
+    ]
+   ],
+   "red_flags": [
+    "very high blood sugar with vomiting or confusion",
+    "fruity breath"
+   ],
+   "description": "A chronic condition where the body doesn't use insulin well, causing high blood sugar. Classic signs are increased thirst, frequent urination and tiredness.",
+   "precautions": [
+    "Get a fasting blood sugar or HbA1c test.",
+    "Balanced diet low in refined sugar, regular exercise, weight control.",
+    "Foot care and regular eye checks."
+   ],
+   "see_doctor": "See a doctor for a blood sugar test if you have these symptoms or a family history."
+  },
+  "hypoglycemia": {
+   "name": "Hypoglycaemia (low blood sugar)",
+   "icd10": "E16.2",
+   "specialty": "Endocrinology",
+   "risk_level": "high",
+   "symptoms": {
+    "sweating": 0.8,
+    "trembling": 0.8,
+    "dizziness": 0.7,
+    "palpitations": 0.6,
+    "confusion": 0.4,
+    "anxiety": 0.4,
+    "weakness": 0.5,
+    "headache": 0.3,
+    "blurred_vision": 0.2
+   },
+   "requires": [
+    [
+     "sweating",
+     "trembling",
+     "dizziness",
+     "confusion"
+    ]
+   ],
+   "red_flags": [
+    "confusion",
+    "seizure",
+    "loss of consciousness"
+   ],
+   "description": "Blood sugar dropping too low, most often in people on diabetes medicines. It causes shakiness, sweating and a racing heart, and can lead to confusion.",
+   "precautions": [
+    "If conscious, take 15 g of fast sugar (glucose tablets, juice, sugar water) and recheck in 15 minutes.",
+    "Follow with a snack containing starch.",
+    "Never give food or drink to an unconscious person."
+   ],
+   "see_doctor": "Repeated episodes need a review of medicines with a doctor. Unconsciousness or seizure means calling emergency services."
+  },
+  "anemia": {
+   "name": "Iron-deficiency anaemia",
+   "icd10": "D50",
+   "specialty": "Hematology",
+   "risk_level": "medium",
+   "symptoms": {
+    "fatigue": 0.9,
+    "weakness": 0.8,
+    "pale_skin": 0.7,
+    "dizziness": 0.55,
+    "shortness_of_breath": 0.45,
+    "headache": 0.35,
+    "cold_hands": 0.4,
+    "palpitations": 0.3,
+    "hair_loss": 0.2
+   },
+   "requires": [
+    [
+     "fatigue",
+     "weakness",
+     "pale_skin"
+    ]
+   ],
+   "red_flags": [
+    "chest pain",
+    "fainting",
+    "breathlessness at rest"
+   ],
+   "description": "A lack of healthy red blood cells, most often due to low iron. It is very common in India, especially among women, and causes tiredness, pale skin and breathlessness.",
+   "precautions": [
+    "Get a haemoglobin test.",
+    "Eat iron-rich foods (greens, legumes, jaggery, meat) with vitamin C.",
+    "Take iron supplements only as advised."
+   ],
+   "see_doctor": "See a doctor for a blood test if you have persistent tiredness with pale skin."
+  },
+  "hypothyroidism": {
+   "name": "Hypothyroidism",
+   "icd10": "E03",
+   "specialty": "Endocrinology",
+   "risk_level": "low",
+   "symptoms": {
+    "fatigue": 0.85,
+    "weight_gain": 0.7,
+    "cold_intolerance": 0.65,
+    "dry_skin": 0.55,
+    "hair_loss": 0.5,
+    "constipation": 0.5,
+    "weakness": 0.3,
+    "body_ache": 0.25
+   },
+   "requires": [
+    [
+     "weight_gain",
+     "cold_intolerance",
+     "fatigue"
+    ]
+   ],
+   "red_flags": [
+    "extreme drowsiness",
+    "very slow heartbeat"
+   ],
+   "description": "An underactive thyroid gland that produces too little hormone, slowing metabolism and causing tiredness, weight gain and feeling cold.",
+   "precautions": [
+    "Get a TSH blood test.",
+    "Take thyroid medicine on an empty stomach as prescribed.",
+    "Recheck levels as advised."
+   ],
+   "see_doctor": "See a doctor for a thyroid test if these symptoms persist for weeks."
+  },
+  "migraine": {
+   "name": "Migraine",
+   "icd10": "G43",
+   "specialty": "Neurology",
+   "risk_level": "low",
+   "symptoms": {
+    "severe_headache": 0.95,
+    "nausea": 0.65,
+    "vomiting": 0.35,
+    "sensitivity_to_light": 0.75,
+    "visual_aura": 0.3,
+    "dizziness": 0.3,
+    "neck_pain": 0.25
+   },
+   "requires": [
+    [
+     "headache"
+    ]
+   ],
+   "red_flags": [
+    "sudden 'worst ever' headache",
+    "headache with fever and stiff neck",
+    "weakness, numbness or slurred speech"
+   ],
+   "description": "A primary headache disorder with recurring, often one-sided, throbbing headaches with nausea and sensitivity to light. Some people get a visual aura first.",
+   "precautions": [
+    "Rest in a dark, quiet room.",
+    "Keep a headache diary to find triggers (sleep loss, skipped meals, stress).",
+    "Use pain relief early; avoid overusing painkillers."
+   ],
+   "see_doctor": "See a doctor for frequent headaches. A sudden, severe or 'different' headache needs emergency care."
+  },
+  "asthma": {
+   "name": "Asthma",
+   "icd10": "J45",
+   "specialty": "Pulmonology",
+   "risk_level": "medium",
+   "symptoms": {
+    "wheezing": 0.9,
+    "shortness_of_breath": 0.85,
+    "chest_tightness": 0.75,
+    "dry_cough": 0.65
+   },
+   "requires": [
+    [
+     "wheezing",
+     "shortness_of_breath",
+     "chest_tightness"
+    ]
+   ],
+   "red_flags": [
+    "unable to speak in full sentences",
+    "bluish lips",
+    "reliever inhaler not helping"
+   ],
+   "description": "A chronic condition where the airways narrow and become inflamed, causing episodes of wheezing, breathlessness and chest tightness, often triggered by allergens, cold air or exercise.",
+   "precautions": [
+    "Use inhalers exactly as prescribed; carry the reliever.",
+    "Avoid known triggers like smoke and dust.",
+    "Have a written asthma action plan."
+   ],
+   "see_doctor": "See a doctor for diagnosis and a treatment plan. Severe breathlessness is an emergency."
+  },
+  "gout": {
+   "name": "Gout",
+   "icd10": "M10",
+   "specialty": "Rheumatology",
+   "risk_level": "low",
+   "symptoms": {
+    "big_toe_pain": 0.75,
+    "joint_pain": 0.95,
+    "joint_swelling": 0.85,
+    "redness_over_joint": 0.8,
+    "mild_fever": 0.15
+   },
+   "requires": [
+    [
+     "joint_pain"
+    ],
+    [
+     "joint_swelling",
+     "redness_over_joint"
+    ]
+   ],
+   "red_flags": [
+    "high fever with a hot joint (possible joint infection)"
+   ],
+   "description": "A type of inflammatory arthritis from uric acid crystals. It causes sudden attacks of severe pain, redness and swelling, classically in the big toe.",
+   "precautions": [
+    "Rest and elevate the joint; apply a cold pack.",
+    "Drink water; limit alcohol, red meat, organ meat and sugary drinks.",
+    "See a doctor about anti-inflammatory and urate-lowering treatment."
+   ],
+   "see_doctor": "See a doctor for a first attack. A hot joint with fever needs urgent care to rule out infection."
+  },
+  "rheumatoid_arthritis": {
+   "name": "Rheumatoid arthritis",
+   "icd10": "M06",
+   "specialty": "Rheumatology",
+   "risk_level": "medium",
+   "symptoms": {
+    "joint_pain": 0.95,
+    "stiff_joints": 0.85,
+    "joint_swelling": 0.75,
+    "fatigue": 0.6,
+    "mild_fever": 0.2,
+    "weakness": 0.3
+   },
+   "requires": [
+    [
+     "joint_pain"
+    ],
+    [
+     "stiff_joints",
+     "joint_swelling"
+    ]
+   ],
+   "red_flags": [
+    "sudden severe joint swelling with fever"
+   ],
+   "description": "An autoimmune disease where the immune system attacks the joint lining. It causes symmetric pain and swelling, often in the small joints of the hands, with morning stiffness lasting over 30 minutes.",
+   "precautions": [
+    "See a rheumatologist early; early treatment protects joints.",
+    "Gentle exercise and physiotherapy.",
+    "Balance rest and activity."
+   ],
+   "see_doctor": "See a doctor if joint pain and stiffness last more than a few weeks."
+  },
+  "cervical_spondylosis": {
+   "name": "Cervical spondylosis",
+   "icd10": "M47.8",
+   "specialty": "Orthopedics",
+   "risk_level": "low",
+   "symptoms": {
+    "neck_pain": 0.95,
+    "shoulder_pain": 0.6,
+    "stiff_joints": 0.4,
+    "headache": 0.4,
+    "numbness": 0.45,
+    "weakness": 0.2,
+    "dizziness": 0.2
+   },
+   "requires": [
+    [
+     "neck_pain"
+    ]
+   ],
+   "red_flags": [
+    "weakness in arms or legs",
+    "loss of bladder or bowel control",
+    "trouble walking"
+   ],
+   "description": "Age- and posture-related wear of the discs and joints in the neck. It causes neck pain and stiffness that can spread to the shoulders and arms. It is common in people who spend long hours at desks or on phones.",
+   "precautions": [
+    "Fix your posture: screen at eye level and take breaks every 30 to 45 minutes.",
+    "Do neck stretches and strengthening exercises, ideally guided by a physiotherapist.",
+    "Use a supportive pillow."
+   ],
+   "see_doctor": "See a doctor if pain spreads into the arms with numbness or weakness."
+  },
+  "eczema": {
+   "name": "Eczema (atopic dermatitis)",
+   "icd10": "L20",
+   "specialty": "Dermatology",
+   "risk_level": "low",
+   "symptoms": {
+    "itching": 0.95,
+    "dry_skin": 0.85,
+    "rash": 0.75,
+    "blisters": 0.15
+   },
+   "requires": [
+    [
+     "itching",
+     "dry_skin"
+    ]
+   ],
+   "red_flags": [
+    "oozing, crusting or fever (infection)"
+   ],
+   "description": "A chronic skin condition that makes skin dry, itchy and inflamed, often in skin folds. It tends to flare and settle over time.",
+   "precautions": [
+    "Moisturise at least twice a day, especially after bathing.",
+    "Use mild soap-free cleansers and lukewarm water.",
+    "Avoid scratching; keep nails short."
+   ],
+   "see_doctor": "See a doctor or dermatologist if itching disturbs sleep or the skin looks infected."
+  },
+  "psoriasis": {
+   "name": "Psoriasis",
+   "icd10": "L40",
+   "specialty": "Dermatology",
+   "risk_level": "low",
+   "symptoms": {
+    "dry_skin": 0.9,
+    "rash": 0.85,
+    "itching": 0.6,
+    "joint_pain": 0.2,
+    "stiff_joints": 0.15
+   },
+   "requires": [
+    [
+     "rash",
+     "dry_skin"
+    ]
+   ],
+   "red_flags": [
+    "widespread red skin with fever or chills"
+   ],
+   "description": "An immune-mediated skin disease that causes thick, red, scaly plaques, commonly on the elbows, knees and scalp. Some people also develop joint pain (psoriatic arthritis).",
+   "precautions": [
+    "Moisturise regularly.",
+    "Avoid triggers like stress, smoking and skin injury.",
+    "See a dermatologist for topical or other treatment."
+   ],
+   "see_doctor": "See a dermatologist for diagnosis and treatment options."
+  },
+  "chickenpox": {
+   "name": "Chickenpox (varicella)",
+   "icd10": "B01",
+   "specialty": "Infectious Diseases",
+   "risk_level": "medium",
+   "symptoms": {
+    "blisters": 0.95,
+    "itching": 0.85,
+    "rash": 0.85,
+    "fever": 0.7,
+    "fatigue": 0.5,
+    "loss_of_appetite": 0.4,
+    "headache": 0.35
+   },
+   "requires": [
+    [
+     "blisters",
+     "rash"
+    ]
+   ],
+   "red_flags": [
+    "difficulty breathing",
+    "rash near the eyes",
+    "confusion",
+    "infected, very red blisters"
+   ],
+   "description": "A highly contagious viral infection causing an itchy rash that turns into fluid-filled blisters and then crusts over, usually with mild fever.",
+   "precautions": [
+    "Stay home until all blisters have crusted.",
+    "Use calamine lotion and keep nails short.",
+    "Use paracetamol for fever; avoid aspirin in children."
+   ],
+   "see_doctor": "See a doctor if you are an adult, pregnant or immunocompromised, or if complications appear."
+  },
+  "panic_attack": {
+   "name": "Panic attack",
+   "icd10": "F41.0",
+   "specialty": "Psychiatry",
+   "risk_level": "low",
+   "symptoms": {
+    "palpitations": 0.9,
+    "anxiety": 0.9,
+    "shortness_of_breath": 0.6,
+    "sweating": 0.6,
+    "trembling": 0.6,
+    "chest_pain": 0.4,
+    "dizziness": 0.5,
+    "numbness": 0.3
+   },
+   "requires": [
+    [
+     "anxiety",
+     "palpitations"
+    ]
+   ],
+   "red_flags": [
+    "chest pain that could be cardiac (rule out heart attack first)",
+    "thoughts of self-harm"
+   ],
+   "description": "A sudden surge of intense fear with physical symptoms such as a racing heart, breathlessness and trembling. It peaks within minutes. It is frightening but not dangerous in itself.",
+   "precautions": [
+    "Slow breathing (in for 4 seconds, out for 6).",
+    "Ground yourself by naming things you can see and hear.",
+    "Talk to a doctor or counsellor if attacks recur."
+   ],
+   "see_doctor": "First-time chest pain or breathlessness should be checked medically to rule out heart or lung causes. Seek help immediately if you have thoughts of self-harm."
+  }
+ }
+}
